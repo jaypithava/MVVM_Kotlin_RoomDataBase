@@ -1,7 +1,5 @@
 package com.c.mvvmkotlin.Repository
 
-import com.c.mvvmkotlin.Models.QuoteList
-
 
 //Generic DataType <T>
 sealed class Response<T>(val data:T?=null, val errorMessage: String?=null) {

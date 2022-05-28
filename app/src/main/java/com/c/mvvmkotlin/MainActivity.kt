@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.c.mvvmkotlin.Models.QuoteList
 import com.c.mvvmkotlin.Repository.QuoteRepository
 import com.c.mvvmkotlin.Repository.Response
 import com.c.mvvmkotlin.RetrofitApi.QuoteService
