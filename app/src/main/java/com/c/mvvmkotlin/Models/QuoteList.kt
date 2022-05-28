@@ -1,7 +1,10 @@
 package com.c.mvvmkotlin.Models
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+
 
 data class QuoteList(
     @SerializedName("count")
@@ -17,9 +20,12 @@ data class QuoteList(
     @SerializedName("results")
     val results: List<Result?>?
 ) {
+
+    @Entity(tableName = "quote")
+
     data class Result(
-        @SerializedName("tags")
-        val tags: List<String?>?,
+        @PrimaryKey(autoGenerate = true)
+        val quoteId: Int,
         @SerializedName("_id")
         val id: String?,
         @SerializedName("author")
