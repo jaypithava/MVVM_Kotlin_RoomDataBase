@@ -18,6 +18,6 @@ class QuoteApplication : Application() {
     private fun initialize() {
         val quoteService = RetrofitHelper.getInstance().create(QuoteService::class.java)
         val database = QuoteDatabase.getDatabase(applicationContext)
-        quoteRepository = QuoteRepository(quoteService, database)
+        quoteRepository = QuoteRepository(quoteService, database,applicationContext)
     }
 }

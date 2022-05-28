@@ -3,6 +3,7 @@ package com.c.mvvmkotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.c.mvvmkotlin.Repository.QuoteRepository
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             ViewModelProvider(this, MainViewModelFactory(repository)).get(MainViewModel::class.java)
 
         mainViewModel.quotes.observe(this, Observer {
-            Log.d("jay", "onCreate: "+it.results.toString())
+            Toast.makeText(this@MainActivity, "Available Data:-"+it.results!!.size.toString(), Toast.LENGTH_SHORT).show()
         })
     }
 }
